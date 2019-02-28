@@ -15,7 +15,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 			declare.safeMixin(this, frameworkParameters);
 			// Define object to access global variables from JSON object. Only add variables to varObject.json that are needed by Save and Share. 
 			this.obj = dojo.eval("[" + obj + "]")[0];	
-			this.url = "https://services2.coastalresilience.org/arcgis/rest/services/North_Carolina/CRS/MapServer";
+			this.url = "https://dev-services.coastalresilience.org/arcgis/rest/services/South_Carolina/CRS_Explorer/MapServer";
 			this.layerDefs = [];
 		},
 		// Called after initialize at plugin startup (why the tests for undefined). Also called after deactivate when user closes app by clicking X. 
@@ -83,11 +83,11 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 			this.future = new future();
 			this.parcels = new parcels();
 			// ADD HTML TO APP
-			$(this.container).parent().append('<button id="viewCrsInfoGraphicIcon" class="button button-default ig-icon"><img src="plugins/community-rating-system/images/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>')
+			$(this.container).parent().append('<button id="viewCrsInfoGraphicIcon" class="button button-default ig-icon"><img src="plugins/community-rating-system-sc/images/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>')
 			$(this.container).parent().find("#viewCrsInfoGraphicIcon").on('click',function(c){
 				TINY.box.show({
 					animate: true,
-					url: 'plugins/community-rating-system/html/info-graphic.html',
+					url: 'plugins/community-rating-system-sc/html/info-graphic.html',
 					fixed: true,
 					width: 660,
 					height: 570
